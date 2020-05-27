@@ -56,7 +56,7 @@ function App() {
         </div>
       </section>
       <section className="scroll-section" id="scroll-section-1">
-        <p>
+        <p className="description">
           <strong>개발자로서의 나</strong>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever

@@ -4,6 +4,9 @@ import "./Main.css";
 
 const App = () => {
   useEffect(() => {
+    let yOffset = 0;
+    let prevScrollHeight = 0; // 현재 스크롤 위치보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
+    let currentScene = 0; // 현재 활성화된(눈 앞에 보이는) scene(scroll-section)
     const sceneInfo = [
       {
         // 0
@@ -48,10 +51,23 @@ const App = () => {
         info.scrollHeight = info.heightNum * window.innerHeight;
         info.objects.container.style.height = `${info.scrollHeight}px`;
       });
-      console.log(sceneInfo);
+    };
+
+    const scrollLoop = () => {
+      prevScrollHeight = 0;
+      for (let i = 0; i < currentScene; i++) {
+        prevScrollHeight += sceneInfo[i].scrollHeight;
+        console.log(prevScrollHeight);
+      }
+      if (yOffset > prevScrollHeight) {
+      }
     };
 
     window.addEventListener("resize", setLayout);
+    window.addEventListener("scroll", () => {
+      yOffset = window.pageYOffset;
+      scrollLoop();
+    });
     setLayout();
   }, []);
 

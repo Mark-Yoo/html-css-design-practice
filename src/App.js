@@ -15,6 +15,13 @@ const App = () => {
         scrollHeight: 0,
         objects: {
           container: document.querySelector("#scroll-section-0"),
+          messageA: document.querySelector("#scroll-section-0.main-message.a"),
+          messageB: document.querySelector("#scroll-section-0.main-message.b"),
+          messageC: document.querySelector("#scroll-section-0.main-message.c"),
+          messageD: document.querySelector("#scroll-section-0.main-message.d"),
+        },
+        values: {
+          messageA_opacity: [0, 1],
         },
       },
       {
@@ -51,24 +58,66 @@ const App = () => {
         info.scrollHeight = info.heightNum * window.innerHeight;
         info.objects.container.style.height = `${info.scrollHeight}px`;
       });
+
+      yOffset = window.pageYOffset;
+      let totalScrollHeight = 0;
+      for (let i = 0; i < sceneInfo.length; i++) {
+        totalScrollHeight += sceneInfo[i].scrollHeight;
+        if (totalScrollHeight >= yOffset) {
+          currentScene = i;
+          break;
+        }
+      }
+      document.body.setAttribute("id", `show-scene-${currentScene}`);
+    };
+    const calcValues = (values, currentYOffset) => {
+      console.log(currentYOffset);
     };
 
+    const playAnimation = () => {
+      const values = sceneInfo[currentScene].values;
+      const currentYOffset = yOffset - prevScrollHeight;
+
+      switch (currentScene) {
+        case 0:
+          let messageA_opacity0 = values.messageA_opacity[0];
+          let messageA_opacity1 = values.messageA_opacity[1];
+          calcValues(values.messageA_opacity, currentYOffset);
+          break;
+        case 1:
+          console.log("1 play");
+          break;
+        case 2:
+          console.log("2 play");
+          break;
+        case 3:
+          console.log("3 play");
+          break;
+      }
+    };
     const scrollLoop = () => {
       prevScrollHeight = 0;
       for (let i = 0; i < currentScene; i++) {
         prevScrollHeight += sceneInfo[i].scrollHeight;
-        console.log(prevScrollHeight);
       }
-      if (yOffset > prevScrollHeight) {
+      if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
+        currentScene++;
+        document.body.setAttribute("id", `show-scene-${currentScene}`);
       }
+      if (yOffset < prevScrollHeight && currentScene !== 0) {
+        currentScene--;
+        document.body.setAttribute("id", `show-scene-${currentScene}`);
+      }
+      playAnimation();
     };
 
-    window.addEventListener("resize", setLayout);
     window.addEventListener("scroll", () => {
       yOffset = window.pageYOffset;
       scrollLoop();
     });
     setLayout();
+    window.addEventListener("resize", setLayout);
+    window.addEventListener("load", setLayout);
   }, []);
 
   return (
@@ -101,21 +150,21 @@ const App = () => {
       </nav>
       <section className="scroll-section" id="scroll-section-0">
         <h1>나는 누구?</h1>
-        <div className="sticky-elem main-message">
+        <div className="sticky-elem main-message a">
           <p>
             개발 공부 1년차
             <br />
             프론트엔드 지망생
           </p>
         </div>
-        <div className="sticky-elem main-message">
+        <div className="sticky-elem main-message b">
           <p>
             영어 과외도 해보고
             <br />
             사진도 찍어보고
           </p>
         </div>
-        <div className="sticky-elem main-message">
+        <div className="sticky-elem main-message c">
           <p>
             그런 내가 개발자가 된 이유
             <br />

@@ -1,8 +1,60 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import "./Main.css";
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    const sceneInfo = [
+      {
+        // 0
+        type: "sticky",
+        heightNum: 5, // 브라우저 높이의 5배로 scrollHeight 세팅
+        scrollHeight: 0,
+        objects: {
+          container: document.querySelector("#scroll-section-0"),
+        },
+      },
+      {
+        // 1
+        type: "normal",
+        heightNum: 5,
+        scrollHeight: 0,
+        objects: {
+          container: document.querySelector("#scroll-section-1"),
+        },
+      },
+      {
+        // 2
+        type: "sticky",
+        heightNum: 5,
+        scrollHeight: 0,
+        objects: {
+          container: document.querySelector("#scroll-section-2"),
+        },
+      },
+      {
+        // 3
+        type: "sticky",
+        heightNum: 5,
+        scrollHeight: 0,
+        objects: {
+          container: document.querySelector("#scroll-section-3"),
+        },
+      },
+    ];
+
+    const setLayout = () => {
+      sceneInfo.forEach((info) => {
+        info.scrollHeight = info.heightNum * window.innerHeight;
+        info.objects.container.style.height = `${info.scrollHeight}px`;
+      });
+      console.log(sceneInfo);
+    };
+
+    window.addEventListener("resize", setLayout);
+    setLayout();
+  }, []);
+
   return (
     <div className="container">
       <nav className="global-nav">
@@ -69,21 +121,25 @@ function App() {
         <div className="sticky-elem main-message">
           <p>
             <small>팀을 위하는 개발</small>
-            '나'만을 위한 개발이 아닌 '팀'을 생각한 개발
+            '팀'을 생각하는 개발
+          </p>
+        </div>
+        <div className="sticky-elem desc-message">
+          <p>
+            '나'만을 위한 개발이 아닌 '팀'을 생각하는 개발 <br />그 안의
+            부드러운 카리스마
           </p>
           <div className="pin"></div>
         </div>
         <div className="sticky-elem desc-message">
-          <p>
-            '나'만을 위한 개발이 아닌 '팀'을 생각한 개발 <br />그 안의 부드러운
-            카리스마
-          </p>
+          <p>커뮤니케이션의 중요성을 누구보다 높게 생각하는 개발자</p>
           <div className="pin"></div>
         </div>
       </section>
       <section className="scroll-section" id="scroll-section-3">
         <p className="mid-message">
           <strong>If you don't have a developer like this,</strong>
+          <br />
           well... <br />
           you don't have a developer like this
         </p>
@@ -98,6 +154,6 @@ function App() {
       <footer className="footer">2020, Mark Yoo</footer>
     </div>
   );
-}
+};
 
 export default App;

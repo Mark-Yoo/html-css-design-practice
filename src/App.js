@@ -386,41 +386,54 @@ const App = () => {
         <h1>나는 누구?</h1>
         <div className="sticky-elem main-message a">
           <p>
-            개발 공부 1년차
+            세상에 도움이 되고싶은
             <br />
-            프론트엔드 지망생
+            프론트엔드 개발자
           </p>
         </div>
         <div className="sticky-elem main-message b">
           <p>
             영어 과외도 해보고
             <br />
-            사진도 찍어보고
+            사진작가도 되었다가
           </p>
         </div>
         <div className="sticky-elem main-message c">
           <p>
-            그런 내가 개발자가 된 이유
+            그런 내가
             <br />
-            내가 만든 서비스가 사람들에게 도움이 될 수 있다는 것
+            개발자가 되기로 결심한 이유
           </p>
         </div>
         <div className="sticky-elem main-message d">
           <p>
-            그런 내가 개발자가 된 이유
+            어릴 적 배운Visual Basic,
             <br />
-            내가 만든 서비스가 사람들에게 도움이 될 수 있다는 것
+            마음속에 품고있던
+            <br />
+            웹페이지를 만드는 즐거움과,
+            <br />
+            코딩을 한다는 즐거움
           </p>
         </div>
       </section>
       <section className="scroll-section" id="scroll-section-1">
         <p className="description">
-          <strong>개발자로서의 나</strong>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
+          <strong>나의 꿈</strong>
+          고등학생이 되던 해, 개발자가 되고자 했던 나의 꿈은 부모님의 반대에
+          부딪혔다. 부모님의 허락이 없으면 아무것도 할 수 없다고 생각했던 그
+          당시의 나는 대학생이 되고서야 하고싶은 것을 찾기 시작했다.
+          <br />
+          마케팅을 전공하면서 다양한 사람들을 만났고 그들에게서 삶을 살아갈
+          다양한 영감을 얻었다.
+          <br />
+          그렇게 나는 사람들의 행복을 담을 수 있는 사진작가로서의 길을
+          걸어보기로 했다.
+          <br />
+          사진작가로서 활동하면서 만나게 된 사람들 중에는 개발자 준비를 하는
+          사람도 있었다. 그 사람과 이야기를 하면서 이미 늦었다고 생각했던
+          개발자의 길이 내가 노력하기에 따라 아직 늦지 않았을수도 있겠다 라는
+          생각을 하게 되었다.
         </p>
       </section>
       <section className="scroll-section" id="scroll-section-2">

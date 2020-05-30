@@ -393,6 +393,8 @@ const App = () => {
         </div>
         <div className="sticky-elem main-message b">
           <p>
+            California State University를 졸업 후
+            <br />
             영어 과외도 해보고
             <br />
             사진작가도 되었다가
@@ -432,21 +434,27 @@ const App = () => {
           <br />
           사진작가로서 활동하면서 만나게 된 사람들 중에는 개발자 준비를 하는
           사람도 있었다. 그 사람과 이야기를 하면서 이미 늦었다고 생각했던
-          개발자의 길이 내가 노력하기에 따라 아직 늦지 않았을수도 있겠다 라는
-          생각을 하게 되었다.
+          개발자의 길이 내가 노력하기에 따라 아직 늦지 않았음을 깨달았다.
         </p>
       </section>
       <section className="scroll-section" id="scroll-section-2">
         <div className="sticky-elem main-message a">
           <p>
-            <small>팀을 위하는 개발</small>
-            '팀'을 생각하는 개발
+            <small>나의 장점/단점을 말하자면...</small>
+            새로운 것에 대한
+            <br />
+            <p className="highlight">도전</p>
+            <br />
+            과정을 통한
+            <br />
+            <p className="highlight">성장</p>
           </p>
         </div>
         <div className="sticky-elem desc-message b">
           <p>
-            '나'만을 위한 개발이 아닌 '팀'을 생각하는 개발 <br />그 안의
-            부드러운 카리스마
+            '나'만을 위한 개발이 아닌
+            <br />
+            '팀'을 생각하는 개발 <br /> 무엇보다 '소통'이 먼저입니다.
           </p>
           <div className="pin"></div>
         </div>

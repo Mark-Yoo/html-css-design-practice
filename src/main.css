@@ -74,6 +74,7 @@ a {
   height: 3em;
   font-size: 2.3rem;
   margin: 5px 0;
+  // opacity를 주지 않으면 display:none 상태에서 block으로 넘어가는 과정에서 잠시 깜빡하면사 화면에 표시되는 문제기 있음.
   opacity: 0;
 }
 

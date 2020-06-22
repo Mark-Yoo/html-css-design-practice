@@ -67,4 +67,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-애플 에어팟 패이지 클론
+
+##  애플 에어팟 패이지 클론 자기소개서
+1. 특이사항
+- video 태그를 사용할 경우, 고화질 비디오를 끊김없이 스크롤의 현재 Y축 위치에 맞춰 재생시키는 것이 어렵기 때문에 이를 전부 이미지로 나누어 진행한다.
